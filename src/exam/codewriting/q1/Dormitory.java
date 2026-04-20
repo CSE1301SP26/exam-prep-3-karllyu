@@ -2,7 +2,6 @@ package exam.codewriting.q1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 /* We wish to create a Dormitory class. A dormitory has-a(n):
 
