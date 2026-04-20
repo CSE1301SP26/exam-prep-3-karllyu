@@ -3,9 +3,13 @@ package exam.codewriting.q5;
 public class Computer {
 
 	/*
-	 * We wish to create a Computer class. Specifically, we are interested in keeping track of the state of the computer, i.e. whether the computer is on, off, or in sleep mode. For this problem, you have already been provided with the necessary instance variables for the Computer class.
+	 * We wish to create a Computer class. 
+    Specifically, we are interested in keeping track of the state of the computer, 
+    i.e. whether the computer is on, off, or in sleep mode. 
+    For this problem, you have already been provided with the necessary instance variables for the Computer class.
 
-		Complete each item of the implementation of the class in the designated areas. Use appropriate names, data types, and modifiers based on the story above:
+		Complete each item of the implementation of the class in the designated areas. 
+        Use appropriate names, data types, and modifiers based on the story above:
 	 */
 	
 	// Instance variables - do not change
@@ -15,9 +19,10 @@ public class Computer {
     // Write the constructor for the Computer class. 
     // When a computer is created it should be completely off.
     
-    
-    
-    
+    public Computer(){
+        this.isOn = false;
+        this.isAsleep = false;
+    }
     
     /**
      * If the button press is short, the computer should go to sleep (but remain on),
@@ -28,7 +33,19 @@ public class Computer {
      * @param longPress true if the button press was long, false if it is short
      */
     public void pushPowerButton(boolean longPress) {
-    	//FIXME
+    	if (longPress){
+            if (this.isOn){
+                this.isOn = false;
+            } else {
+                this.isOn = true;
+            }
+        } else {
+            if (this.isOn && this.isAsleep){
+                this.isAsleep = false;
+            } else if (this.isOn && !this.isAsleep){
+                this.isAsleep = true;
+            }
+        }
     }
     
     // getters and setters
