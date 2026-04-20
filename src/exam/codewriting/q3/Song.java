@@ -9,15 +9,33 @@ package exam.codewriting.q3;
 public class Song {
 	
 	// Define your instance variables here
+	private String name;
+	private String artist;
+	private int duration;
 	
 	// Write the constructor for the Song class
+	public Song(String name, String artist, int duration){
+		this.name = name;
+		this.artist = artist;
+		this.duration = duration;
+	}
 	
 	public String getName () {
-		return ""; //FIXME
+		return name;
+	}
+
+	public String getArtist () {
+		return artist;
+	}
+
+	public int getDuration () {
+		return duration;
 	}
 	
 	public String toString () {
-		return ""; //FIXME
+		return name + " Artist: " 
+			+ artist + "Duration: " 
+			+ duration + "s";
 	}
 	
 	/**
@@ -27,6 +45,10 @@ public class Song {
 	* of the durations of the original songs.
 	*/
 	public Song mashUp ( Song other ) {
-		return null; //FIXME
+		String creationName = this.getName() + " / " + other.getName();
+		String creationArtist = this.getArtist() + ", " + other.getArtist();
+		int creationDuration = (this.getDuration() + other.getDuration()) / 2;
+		Song creation = new Song(creationName, creationArtist, creationDuration);
+		return creation;
 	}
 }
